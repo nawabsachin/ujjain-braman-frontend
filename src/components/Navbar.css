@@ -1,0 +1,135 @@
+:root {
+  --nav-bg: #a67c52;
+  --nav-text: #ffffff;
+  --nav-hover: #ffd699;
+}
+
+.navbar {
+      background-color: burlywood;
+  padding: 1.2rem 2rem;
+  color: var(--nav-text);
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 80px;
+  max-width: 180px;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1100;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--nav-text);
+  transition: all 0.4s ease;
+}
+
+/* Optional: hamburger animation */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--nav-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+            margin-left: -100px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-links.open {
+            margin-left: -100px;
+    max-height: 500px;
+    padding: 1rem 0;
+    width: 115px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    font-size: 1rem;
+    color: white;
+  }
+}

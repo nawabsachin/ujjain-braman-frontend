@@ -1,0 +1,160 @@
+:root {
+  --btn-bg-start: #5adaff;
+  --btn-bg-end: #5468ff;
+  --btn-color: #fff;
+  --btn-shadow-1: rgba(45, 35, 66, 0.4);
+  --btn-shadow-2: rgba(45, 35, 66, 0.3);
+  --btn-shadow-inset: rgba(58, 65, 111, 0.5);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  aspect-ratio: 7 / 3;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease-in-out;
+  position: relative;
+}
+
+/* ====== BUTTON CONTAINER (VERTICAL STACK) ====== */
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* ====== SHARED BUTTON STYLE ====== */
+.btn12,
+.btn13 {
+  display: flex;
+      justify-content: center;  /* Horizontal center */
+      align-items: center;      /* Vertical center */
+     
+      text-align: center; 
+  appearance: none;
+  background-color: red;
+  border: 0;
+  border-radius: 6px;
+  box-shadow:
+    var(--btn-shadow-1) 0 2px 4px,
+    var(--btn-shadow-2) 0 7px 13px -3px,
+    var(--btn-shadow-inset) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: var(--btn-color);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+ 
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+}
+
+/* ====== BUTTON INTERACTIONS ====== */
+.btn12:hover,
+.btn13:hover {
+  box-shadow:
+    var(--btn-shadow-1) 0 4px 8px,
+    var(--btn-shadow-2) 0 7px 13px -3px,
+    #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn12:active,
+.btn13:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.btn12:focus,
+.btn13:focus {
+  box-shadow:
+    #3c4fe0 0 0 0 1.5px inset,
+    var(--btn-shadow-1) 0 2px 4px,
+    var(--btn-shadow-2) 0 7px 13px -3px,
+    #3c4fe0 0 -3px 0 inset;
+}
+
+/* ====== SLIDER ARROWS ====== */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.2s ease;
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+.slider-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ====== MOBILE RESPONSIVENESS ====== */
+@media (max-width: 768px) {
+  .slider {
+    aspect-ratio: 4 / 3;
+  }
+
+  .slider-button {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  .btn12,
+  .btn13 {
+    font-size: 14px;
+    height: 40px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-button {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+
+  .btn12,
+  .btn13 {
+    font-size: 12px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,157 @@
+/* Home.css */
+
+/* Spiritual Color Palette */
+:root {
+  --bg-light: #f5f3e7;
+  --accent-gold: #d4af37;
+  --deep-purple: #4b0082;
+  --soft-saffron: #f4c542;
+  --temple-maroon: #800000;
+  --text-dark: #2c2c2c;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.home {
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, var(--soft-saffron), var(--accent-gold));
+ 
+   /* background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  color: var(--temple-maroon);
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.btnbook{
+  background-color: blueviolet;
+  color: gold;
+}
+/* Services Section */
+.services {
+  background-color: #fff;
+  padding: 2rem;
+  border-left: 6px solid var(--deep-purple);
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.services h2 {
+  color: var(--deep-purple);
+}
+
+.services ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.services li {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+/* Locations Section */
+.locations {
+  background-color: #fef9ec;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.locations h2 {
+  color: var(--temple-maroon);
+  margin-bottom: 1rem;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.location-grid div {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid var(--accent-gold);
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Hotel Section */
+.hotel {
+  background-color: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 6px solid var(--soft-saffron);
+  border-radius: 8px;
+}
+
+.hotel h2 {
+  color: var(--deep-purple);
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--deep-purple);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background-color: var(--accent-gold);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #caa42e;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .location-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .services ul {
+    padding-left: 0.5rem;
+  }
+}

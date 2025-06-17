@@ -1,0 +1,118 @@
+/* Base Container */
+.booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Form Styling */
+.booking-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.booking-form h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Label and Input Styling */
+.booking-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+.booking-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #45a049;
+}
+
+/* Medium Screens (Tablet) */
+@media (max-width: 768px) {
+  .booking-form {
+    padding: 1.5rem;
+  }
+
+  .booking-form h2 {
+    font-size: 1.6rem;
+  }
+
+  .booking-form label {
+    font-size: 0.95rem;
+  }
+
+  .booking-form input {
+    font-size: 0.95rem;
+  }
+
+  .booking-form button {
+    font-size: 1rem;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .booking-container {
+    padding: 1rem;
+      min-height: 60vh;
+  }
+
+  .booking-form {
+    padding: 1.25rem;
+  }
+
+  .booking-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .booking-form label {
+    font-size: 0.9rem;
+  }
+
+  .booking-form input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .booking-form button {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+}

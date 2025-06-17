@@ -1,0 +1,84 @@
+.expanded-tour-info {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #3e2f1c;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #a65e2e;
+  font-weight: 700;
+}
+
+.facility-section {
+  margin-bottom: 3.5rem;
+}
+
+.facility-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  color: #7a4b14;
+}
+
+.facility-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+  color: #5e4b3c;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.image-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 120px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.booking-area {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.book-now-btn {
+  background-color: #a65e2e;
+  color: #f7f2e7;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #7a4515;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .image-gallery img {
+    height: 100px;
+  }
+}
