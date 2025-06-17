@@ -27,7 +27,7 @@ function BookingList() {
 
   const fetchBookings = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/bookings');
+      const res = await fetch('https://ujjjian-braman-backend.onrender.com/api/bookings');
       const data = await res.json();
       setBookings(data);
     } catch (err) {
