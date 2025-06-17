@@ -13,10 +13,10 @@ const carImages = [
 ];
 
 const foodImages = [
-  '/images/food1.jpg',
-  '/images/food.jpg',
-  '/images/food3.jpg',
-  '/images/food2.jpg',
+  '/images/food1.jpeg',
+  '/images/food.jpeg',
+  '/images/food3.jpeg',
+  '/images/food2.jpeg',
   
 ];
 

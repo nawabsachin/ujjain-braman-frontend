@@ -9,6 +9,7 @@ function BookingList() {
   const [bookings, setBookings] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
+  const [visibleCount, setVisibleCount] = useState(30);
 
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
@@ -31,69 +32,90 @@ function BookingList() {
       const data = await res.json();
       setBookings(data);
     } catch (err) {
-      console.error('Error fetching bookings:', err);
+      console.error('Error fetching bookings!', err);
     }
   };
 
   useEffect(() => {
     if (loggedIn) {
       fetchBookings();
+
+      // poll every 30 seconds for new booking
+      const interval = setInterval(fetchBookings, 30000);
+      return () => clearInterval(interval);
     }
   }, [loggedIn]);
 
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 30);
+  };
+
   if (!loggedIn) {
     return (
-      <> 
-      <Navbar></Navbar>   
+      <>
+        <Navbar></Navbar>
         <div style={styles.container}>
-        <h2>🔐 Admin Login</h2>
-        <form onSubmit={handleLoginSubmit}>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={loginForm.email}
-            onChange={handleLoginChange}
-            required
-            style={styles.input}
-          />
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={loginForm.password}
-            onChange={handleLoginChange}
-            required
-            style={styles.input}
-          />
-          <button type="submit" style={styles.button}>Login</button>
-        </form>
-      </div>
-      <Footer></Footer>
+          <h2>🔐 Admin Login</h2>
+          <form onSubmit={handleLoginSubmit}>
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={loginForm.email}
+              onChange={handleLoginChange}
+              required
+              style={styles.input}
+            />
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={loginForm.password}
+              onChange={handleLoginChange}
+              required
+              style={styles.input}
+            />
+            <button type="submit" style={styles.button}>
+              Login
+            </button>
+          </form>
+        </div>
+        <Footer></Footer>
       </>
-
     );
   }
 
+  // Reverse to show the most recent first
+  const reversed = [...bookings].reverse();
+
   return (
     <>
-    <Navbar></Navbar>
-    <div style={styles.container}>
-      <h2>📋 Tour Booking List</h2>
-      {bookings.length === 0 ? (
-        <p>No bookings found.</p>
-      ) : (
-        <ul style={styles.list}>
-          {bookings.map((b, index) => (
-            <li key={index} style={styles.item}>
-              <strong>{b.name}</strong> ({b.email}) — {b.phone} <br />
-              👥 {b.persons} person(s), 📅 {b.date}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-    <Footer></Footer>
+      <Navbar></Navbar>
+      <div style={styles.container}>
+        <h2>📋 Tour Booking List</h2>
+        {reversed.length === 0 ? (
+          <p>No booking(s) found.</p>
+        ) : (
+          <>
+            <ul style={styles.list}>
+              {reversed.slice(0, visibleCount).map((b, index) => (
+                <li key={index} style={styles.item}>
+                    <strong>{b.name}</strong> ({b.email}) — {b.phone} <br />
+                    👥 {b.persons} person(s), 📅 {b.date}
+                </li>
+              ))}
+            </ul>
+            {visibleCount < reversed.length && (
+              <button onClick={handleLoadMore} style={styles.button}>
+                Load More
+              </button>
+            )}
+
+          </>
+        )}
+
+      </div>
+      <Footer></Footer>
     </>
   );
 }
