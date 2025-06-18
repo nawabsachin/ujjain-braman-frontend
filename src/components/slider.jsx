@@ -39,8 +39,11 @@ const Slider = () => {
         style={{ backgroundImage: `url(${images[currentIndex]})` }}
       >
        <div className="button-wrapper">
-      <button className='btn12'>For Booking Contact Now 8109263143</button>
-      <button className='btn13'>For Booking Contact Now 7489557531</button>
+    <div className="button-wrapper">
+  <a href="tel:8109263143" className="btn12">For Booking Contact Now 8109263143</a>
+  <a href="tel:7489557531" className="btn13">For Booking Contact Now 7489557531</a>
+</div>
+
     </div>
 
       </div>
