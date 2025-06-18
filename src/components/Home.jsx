@@ -19,17 +19,7 @@ const Home = () => {
       <div className="home">
     
 
-      {/* <section className="services">
-        <h2>✨ Our Services</h2>
-        <ul>
-          <li>🚖 Pickup from Railway Station & Bus Stand</li>
-          <li>🚗 Comfortable Car Facility for city tours</li>
-          <li>🍛 Delicious Veg Food Options</li>
-          <li>🧘 Experienced Local Guide</li>
-          <li>🔱 VIP Darshan at Mahakaleshwar Temple</li>
-          <li>🏨 Hotel Stay in prime locations</li>
-        </ul>
-      </section> */}
+   
 
 <Locations></Locations>
 
@@ -55,7 +45,9 @@ const Home = () => {
       <section className="contact">
         <h2>📞 Book Now or Contact Us</h2>
         <p>For bookings, call us or WhatsApp at <strong>+91-7489557531</strong></p>
-        <button>Contact Now</button>
+        {/* <button>Contact Now</button> */}
+ <a href="tel:7489557531" className="btn13">Contact Now </a>
+        
       </section>
      
     </div>

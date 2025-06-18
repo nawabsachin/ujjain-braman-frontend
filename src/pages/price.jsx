@@ -1,5 +1,7 @@
 import React from 'react';
 import './PricingPage.css';
+import { Link } from 'react-router-dom';
+
 
 function PricingPage() {
   return (
@@ -19,7 +21,10 @@ function PricingPage() {
           <li>🏨 Stay in Prime Locations</li>
         </ul>
 
-        <button className="book-button">Book Now</button>
+       <Link to="/my-app/src/pages/contact.jsx" className="book-button">
+          Book Now
+        </Link>
+
       </div>
     </div>
   );

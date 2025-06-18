@@ -2,6 +2,7 @@ import React from 'react';
 import './allService.css';
 import Navbar from '../components/navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const carImages = [
   // './images/car2.jpeg',
@@ -66,12 +67,17 @@ const UjjainTourInfoExpanded = () => {
       />
 
       <div className="booking-area">
-        <button
+        {/* <button
           className="book-now-btn"
           onClick={() => alert('Booking feature coming soon!')}
         >
           📝 Book Your Ujjain Tour Now
-        </button>
+        </button> */}
+
+        <Link to="/my-app/src/pages/contact.jsx" className="book-button">
+           📝 Book Your Ujjain Tour Now
+        </Link>
+
       </div>
     </div>
 
