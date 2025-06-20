@@ -25,8 +25,8 @@ const services = [
   },
   {
     icon: '🔱',
-    title: 'VIP Darshan at Mahakaleshwar Temple',
-    description: 'Skip the lines with our VIP darshan access at the famous Mahakaleshwar Jyotirlinga Temple.',
+    title: 'Famous Temple Darshan',
+    description: 'We provide comfertable darshan at each famous Temple in ujjain ',
   },
   {
     icon: '🏨',

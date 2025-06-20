@@ -17,7 +17,7 @@ function PricingPage() {
           <li>🚗 Comfortable Car Facility for City Tours</li>
           <li>🍛 Delicious Veg Food Options</li>
           <li>🧘 Experienced Local Guide</li>
-          <li>🔱 VIP Darshan at Mahakaleshwar Temple</li>
+          {/* <li>🔱 VIP Darshan at Mahakaleshwar Temple</li> */}
           <li>🏨 Stay in Prime Locations</li>
         </ul>
 

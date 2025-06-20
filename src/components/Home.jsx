@@ -37,10 +37,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="hotel">
+      {/* <section className="hotel">
         <h2>🏨 Comfortable Stay</h2>
         <p>We provide hotel bookings in budget and premium ranges, near Mahakal Mandir and key sites.</p>
-      </section>
+      </section> */}
 
       <section className="contact">
         <h2>📞 Book Now or Contact Us</h2>
